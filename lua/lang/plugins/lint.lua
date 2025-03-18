@@ -5,6 +5,13 @@ return {
 		"errata-ai/vale",
 		"zaach/jsonlint",
 		"hadolint/hadolint",
+		"rust-lang/rust-clippy",
+		"golangci/golangci-lint",
+		"checkstyle/checkstyle",
+		"pinterest/ktlint",
+		"eslint/eslint",
+		"typescript-eslint/typescript-eslint",
+		"redhat-developer/yaml-language-server",
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			local lint = require("lint")
@@ -14,8 +21,14 @@ return {
 				rst = { "vale" },
 				json = { "jsonlint" },
 				dockerfile = { "hadolint" },
+				rust = { "clippy" },
+				go = { "golangci-lint" },
+				java = { "checkstyle" },
+				kotlin = { "ktlint" },
+				javascript = { "eslint" },
+				typescript = { "eslint" },
+				yaml = { "yamllint" },
 			}
-
 			-- To allow other plugins to add linters to require('lint').linters_by_ft,
 			-- instead set linters_by_ft like this:
 			-- lint.linters_by_ft = lint.linters_by_ft or {}

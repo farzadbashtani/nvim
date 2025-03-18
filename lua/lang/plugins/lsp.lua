@@ -262,7 +262,11 @@ return {
 				},
 				gopls = {},
 				pyright = {},
-				ts_ls = {},
+				ts_ls = {}, -- typescript
+				jdtls = {}, -- Java LSP
+				kotlin_language_server = {}, -- Kotlin LSP
+				eslint = {}, -- JavaScript LSP
+				groovyls = {}, -- Groovy LSP
 			}
 
 			-- Ensure the servers and tools above are installed
