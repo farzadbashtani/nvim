@@ -919,9 +919,9 @@ require("lazy").setup({
 	},
 
 	-- imports to load additional plugins in lua dir
-	{ import = "kickstart.plugins" },
 	{ import = "code.plugins" },
 	{ import = "tool.plugins" },
+	{ import = "ui.plugins" },
 	--
 	-- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
 	-- Or use telescope!
