@@ -1,8 +1,10 @@
 return {
-
 	{ -- Linting
 		"mfussenegger/nvim-lint",
+		-- make sure to add linters here so they get downloaded and installed
 		"errata-ai/vale",
+		"zaach/jsonlint",
+		"hadolint/hadolint",
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			local lint = require("lint")
@@ -10,6 +12,8 @@ return {
 				markdown = { "vale" },
 				text = { "vale" },
 				rst = { "vale" },
+				json = { "jsonlint" },
+				dockerfile = { "hadolint" },
 			}
 
 			-- To allow other plugins to add linters to require('lint').linters_by_ft,
