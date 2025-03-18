@@ -2,16 +2,18 @@ return {
 	{ -- Linting
 		"mfussenegger/nvim-lint",
 		-- make sure to add linters here so they get downloaded and installed
-		"errata-ai/vale",
-		"zaach/jsonlint",
-		"hadolint/hadolint",
-		"rust-lang/rust-clippy",
-		"golangci/golangci-lint",
-		"checkstyle/checkstyle",
-		"pinterest/ktlint",
-		"eslint/eslint",
-		"typescript-eslint/typescript-eslint",
-		"redhat-developer/yaml-language-server",
+		dependencies = {
+			"errata-ai/vale",
+			"zaach/jsonlint",
+			"hadolint/hadolint",
+			"rust-lang/rust-clippy",
+			"golangci/golangci-lint",
+			"checkstyle/checkstyle",
+			"pinterest/ktlint",
+			"eslint/eslint",
+			"typescript-eslint/typescript-eslint",
+			"redhat-developer/yaml-language-server",
+		},
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			local lint = require("lint")
