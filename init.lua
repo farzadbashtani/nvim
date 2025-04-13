@@ -64,8 +64,8 @@ vim.opt.softtabstop = 4
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+-- vim.opt.list = true
+-- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -87,11 +87,6 @@ vim.opt.confirm = true
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
--- Quick actions
-vim.keymap.set("n", "<leader>q", "<Nop>", { desc = "Quick Actions" })
-vim.keymap.set("n", "<leader>qd", vim.diagnostic.setloclist, { desc = "[D]iagnostic quickfix list" })
-vim.keymap.set("n", "<leader>qq", ":confirm qall<CR>", { desc = "[Q]uit NeoVim", noremap = true, silent = true })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
