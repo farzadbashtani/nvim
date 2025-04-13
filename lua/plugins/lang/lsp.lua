@@ -261,4 +261,5 @@ return {
 			})
 		end,
 	},
+	{ "tpope/vim-rails" },
 }
