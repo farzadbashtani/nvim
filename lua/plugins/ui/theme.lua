@@ -12,6 +12,11 @@ return {
 				styles = {
 					comments = { italic = false }, -- Disable italics in comments
 				},
+				on_colors = function(colors)
+					-- Original tokyonight-night bg is around #1a1b26
+					colors.bg = "#12121a" -- Slightly darker than the default
+					colors.bg_dark = "#0f0f17" -- Darker variant
+				end,
 			})
 
 			-- Load the colorscheme here.
