@@ -7,15 +7,35 @@ return {
 			{
 				"<leader>cf",
 				function()
+					if not vim.g.formatting_enabled then
+						vim.notify("Formatting is disabled", vim.log.levels.WARN)
+						return
+					end
 					require("conform").format({ async = true, lsp_format = "fallback" })
 				end,
 				mode = "",
 				desc = "[C]ode [F]ormat buffer",
+				},
+			{
+				"<leader>tf",
+				function()
+					vim.g.formatting_enabled = not vim.g.formatting_enabled
+					if vim.g.formatting_enabled then
+						vim.notify("Auto-formatting enabled", vim.log.levels.INFO)
+					else
+						vim.notify("Auto-formatting disabled", vim.log.levels.INFO)
+					end
+				end,
+				desc = "[T]oggle [F]ormatting",
 			},
 		},
 		opts = {
 			notify_on_error = false,
 			format_on_save = function(bufnr)
+				if not vim.g.formatting_enabled then
+					return false
+				end
+
 				-- Disable "format_on_save lsp_fallback" for languages that don't
 				-- have a well standardized coding style. You can add additional
 				-- languages here or re-enable it for the disabled ones.
