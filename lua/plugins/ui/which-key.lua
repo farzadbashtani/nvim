@@ -47,7 +47,7 @@ return {
 			spec = {
 				{ "<leader>c", group = "[C]ode", mode = { "n", "x" } },
 				{ "<leader>d", group = "[D]ocument" },
-				{ "<leader>r", group = "[R]ename" },
+				{ "<leader>r", group = "[R]eplace" },
 				{ "<leader>s", group = "[S]earch" },
 				{ "<leader>w", group = "[W]orkspace" },
 				{ "<leader>t", group = "[T]oggle" },
