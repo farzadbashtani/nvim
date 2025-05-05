@@ -96,6 +96,9 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
+-- Remap 'p' in visual mode to avoid yanking the replaced text
+vim.keymap.set("v", "p", '"_dP', { noremap = true, silent = true })
+
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
