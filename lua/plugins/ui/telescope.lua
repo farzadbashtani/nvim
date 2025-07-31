@@ -52,11 +52,6 @@ return {
 					},
 					sorting_strategy = "ascending",
 
-					-- Include dotfiles and exclude .git
-					find_command = {
-						"fd", "--type", "f", "--hidden", "--exclude", ".git"
-					},
-
 					vimgrep_arguments = {
 						"rg",
 						"--no-heading",
@@ -72,6 +67,11 @@ return {
 						".git/"
 					},
 
+				},
+				pickers = {
+					find_files = {
+						hidden = true
+					},
 				},
 				extensions = {
 					["ui-select"] = {
