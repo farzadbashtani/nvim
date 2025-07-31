@@ -51,6 +51,27 @@ return {
 						prompt_position = "top",
 					},
 					sorting_strategy = "ascending",
+
+					-- Include dotfiles and exclude .git
+					find_command = {
+						"fd", "--type", "f", "--hidden", "--exclude", ".git"
+					},
+
+					vimgrep_arguments = {
+						"rg",
+						"--no-heading",
+						"--with-filename",
+						"--line-number",
+						"--column",
+						"--smart-case",
+						"--hidden",
+						"--glob", "!.git/*"
+					},
+
+					file_ignore_patterns = {
+						".git/"
+					},
+
 				},
 				extensions = {
 					["ui-select"] = {
