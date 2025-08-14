@@ -60,11 +60,25 @@ return {
 						"--column",
 						"--smart-case",
 						"--hidden",
-						"--glob", "!.git/*"
+						"--glob", "!.git/*",
+						"--glob", "!node_modules/*",
+						"--glob", "!build/*",
+						"--glob", "!target/*",
+						"--glob", "!dist/*",
+						"--glob", "!vendor/*",
+						"--glob", "!bin/*",
+						"--glob", "!__pycache__/*"
 					},
 
 					file_ignore_patterns = {
-						".git/"
+						".git/",
+						"node_modules/",
+						"build/",
+						"target/",
+						"dist/",
+						"bin/",
+						"vendor/",
+						"__pycache__/",
 					},
 
 				},

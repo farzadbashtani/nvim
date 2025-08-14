@@ -24,4 +24,26 @@ return {
             desc = "[R]eplace in current [F]ile",
         },
     },
+    opts = {
+        find_engine = {
+            ["rg"] = {
+                cmd = "rg",
+                args = {
+                    "--color=never",
+                    "--no-heading",
+                    "--with-filename",
+                    "--line-number",
+                    "--column",
+                    "--glob=!.git",
+                    "--glob=!node_modules",
+                    "--glob=!build",
+                    "--glob=!target",
+                    "--glob=!dist",
+                    "--glob=!bin",
+                    "--glob=!vendor",
+                    "--glob=!__pycache__",
+                },
+            },
+        },
+    },
 }
