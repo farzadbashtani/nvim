@@ -132,6 +132,7 @@ return {
 				rust_analyzer = {},
 				gopls = {},
 				pyright = {},
+				pylsp = {},
 				ts_ls = {},
 				jdtls = {},
 				kotlin_language_server = {},
