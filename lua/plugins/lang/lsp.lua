@@ -134,10 +134,7 @@ return {
 				pyright = {},
 				pylsp = {},
 				ts_ls = {},
-				jdtls = {},
-				kotlin_language_server = {},
 				eslint = {},
-				ruby_lsp = {},
 				tailwindcss = {},
 			}
 
