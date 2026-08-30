@@ -22,6 +22,7 @@ return {
 				"kotlin",
 				"groovy",
 				"embedded_template",
+				"csharp",
 			},
 			auto_install = true,
 			highlight = {
