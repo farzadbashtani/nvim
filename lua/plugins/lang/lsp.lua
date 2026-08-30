@@ -19,21 +19,18 @@ return {
 		},
 		config = function()
 			-- Initialize diagnostic state
-			vim.g.diagnostics_enabled = true
+			vim.g.diagnostics_enabled = false
 
-			-- Add diagnostic toggle function and keymap
-			local function toggle_diagnostics()
-				vim.g.diagnostics_enabled = not vim.g.diagnostics_enabled
-				if vim.g.diagnostics_enabled then
-					vim.diagnostic.enable()
-					vim.notify("Diagnostics enabled", vim.log.levels.INFO)
-				else
-					vim.diagnostic.disable()
-					vim.notify("Diagnostics disabled", vim.log.levels.INFO)
-				end
-			end
-
-			vim.keymap.set('n', '<leader>td', toggle_diagnostics, { desc = '[T]oggle [D]iagnostics' })
+            -- Add diagnostic toggle function and keymap
+            local function toggle_diagnostics()
+            	vim.g.diagnostics_enabled = not vim.g.diagnostics_enabled
+            	vim.diagnostic.enable(vim.g.diagnostics_enabled)
+            	if vim.g.diagnostics_enabled then
+            		vim.notify("Diagnostics enabled", vim.log.levels.INFO)
+            	else
+            		vim.notify("Diagnostics disabled", vim.log.levels.INFO)
+            	end
+            end			vim.keymap.set('n', '<leader>td', toggle_diagnostics, { desc = '[T]oggle [D]iagnostics' })
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
